@@ -17,12 +17,12 @@ Obj TestCommandWithParams(Obj self, Obj param, Obj param2)
 }
 
 
-typedef Obj (* GVarFunc)(/*arguments*/);
+typedef Obj (* GVarFuncTypedef)(/*arguments*/);
 
 #define GVAR_FUNC_TABLE_ENTRY(srcfile, name, nparam, params) \
   {#name, nparam, \
    params, \
-   (GVarFunc)name, \
+   (GVarFuncTypedef)name, \
    srcfile ":Func" #name }
 
 // Table of functions to export
